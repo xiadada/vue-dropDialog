@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <button @click="openDropDialog('dropDialogBtn')" ref="dropDialogBtn" id="dropDialogBtn">点击我出现dropdialog</button>
-    <drop-dialog :is-show="getDropDialogOptions['dropDialogBtn'].isShow" :top-distance="getDropDialogOptions['dropDialogBtn'].topDistance" :left-distance="getDropDialogOptions['dropDialogBtn'].leftDistance" ref="dropDialogBtn-dropDialog" id="dropDialogBtn-dropDialog">
+    <drop-dialog :is-show="getDropDialogOptions['dropDialogBtn'].isShow" :top-distance="getDropDialogOptions['dropDialogBtn'].topDistance" :left-distance="getDropDialogOptions['dropDialogBtn'].leftDistance" ref="dropDialogBtn-dropDialog" :id="getDropDialogOptions['dropDialogBtn'].id">
       <div class="content" slot="drop-dialog-content">
         
       </div>

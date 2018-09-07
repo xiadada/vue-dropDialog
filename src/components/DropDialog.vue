@@ -1,5 +1,5 @@
 <template>
-	<div class="drop-dialog-container" v-if="isShow" :style="{width: widNum+'px',top: topDistance+'px',left: leftDistance+'px'}">
+	<div class="drop-dialog-container" v-if="isShow" :style="{width: widNum+'px',top: topDistance+'px',left: leftDistance+'px'}" :id="id">
 		<div class="drop-dialog-point"></div>
 		<slot name="drop-dialog-content"></slot>
 	</div>
@@ -25,6 +25,10 @@
 			leftDistance: {
 				type: Number,
 				default: 0
+			},
+			id: {
+				type: String,
+				default: 'drop-dialog'
 			}
 		}
 	})

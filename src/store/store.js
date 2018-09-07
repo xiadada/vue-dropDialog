@@ -8,6 +8,7 @@ export const store = new Vuex.Store({
 		//对应的一些属性，存储数据的，设置属性
 		isShowDropDialog: {
 			dropDialogBtn: {
+				id: 'dropDialogBtn-dropDialog',
 				isShow: false,
 				topDistance: null,
 				leftDistance: null
@@ -34,12 +35,14 @@ export const store = new Vuex.Store({
 	      	  	state.isShowDropDialog[option.param].topDistance = h+13;
 	      	  	//下拉框距离最近的相对定位的祖先元素左边的距离
 	      	  	let dropDialogContainer = option.param+'-dropDialog';
-	      	  	state.isShowDropDialog[option.param].leftDistance =  option.that.$refs[option.param].offsetLeft +  option.that.$refs[option.param].offsetWidth/2 -   option.that.$refs[dropDialogContainer].widNum/2;
+	      	  	state.isShowDropDialog[option.param].leftDistance =  option.that.$refs[option.param].offsetLeft +  option.that.$refs[option.param].offsetWidth/2 - option.that.$refs[dropDialogContainer].widNum/2;
 
 	        	function clickEvent(e){
 	        		//点击下拉框以外的地方，下拉框消失
-		        	if (e.target.id ==  option.that.$refs[option.param]){
+	        		console.log('aaa')
+		        	if (e.target.id == option.that.$refs[option.param].id || e.target.id == option.that.$refs[option.param+'-dropDialog'].id){
 		        		state.isShowDropDialog[option.param].isShow = true;
+		        		console.log('aaa');
 		        	}else{
 		        	    state.isShowDropDialog[option.param].isShow = false;
 		        	}
